@@ -11,7 +11,7 @@ module.exports = {
                 courseName: req.body.courseName
             };
 
-            // Validate that the coursename matches allowed ENUM values
+            // Validate that the courseName matches allowed ENUM values
             if (!['certificate_software_development', 'diploma_software_development', 
                   'certificate_cyber_security', 'diploma_cyber_security']
                   .includes(info.courseName)) {

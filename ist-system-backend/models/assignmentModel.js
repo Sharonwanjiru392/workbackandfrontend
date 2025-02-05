@@ -1,4 +1,6 @@
 // models/assignment.js
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("./indexStart");
 module.exports = (sequelize, DataTypes) => {
     const Assignment = sequelize.define('Assignment', {
         assignment_id: {

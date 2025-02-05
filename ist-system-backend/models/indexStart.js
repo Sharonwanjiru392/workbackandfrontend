@@ -32,6 +32,7 @@ db.sequelize = sequelize
 db.user = require('./usersModel.js')(sequelize, DataTypes)
 db.courses = require('./courseModel.js')(sequelize, DataTypes)
 db.assignment = require('./assignmentModel.js')(sequelize, DataTypes)
+db.exam = require('./examModel.js')(sequelize, DataTypes)
 // db.assignment = require('./assignmentModel.js')(sequelize, DataTypes)
 
 db.sequelize.sync({force: false})
@@ -59,6 +60,7 @@ db.assignment.belongsTo(db.courses, { foreignKey: 'course_id', as: 'course' });
 // Other relationships
 db.assignment.belongsTo(db.user, { foreignKey: 'lecturer_id', as: 'lecturer' });
 db.user.hasMany(db.assignment, { foreignKey: 'lecturer_id', as: 'assignments' });
+
 
 // });
 

@@ -4,6 +4,7 @@ const express = require('express')
 const userRoute = require('./routes/userRoute')
 const courseRoute = require('./routes/courseRoute')
 const assignmentRoute = require('./routes/assignmentRoute')
+const examRoute = require('./routes/examRoute')
 const app = express()
 
 const helmet = require('helmet')
@@ -29,6 +30,7 @@ app.use(express.urlencoded({extended: true}))
 app.use('/api', userRoute)
 app.use('/api', courseRoute)
 app.use('/api', assignmentRoute)
+app.use('/api', examRoute)
 
 // error handling 
 app.use((err, req, res, next) =>{
